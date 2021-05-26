@@ -15,9 +15,9 @@ on:
 
 # Custom environment variables declared in workflow level
 env:
-  CTP_URL: Available for all jobs in this workflow
-  DTP_URL: Available for all jobs in this workflow
-  USERNAME: Available for all jobs in this workflow
+  CTP_URL: http://34.221.143.134:8080/em/
+  DTP_URL: http://18.236.243.147:8080/grs/
+  USERNAME: demo
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -45,5 +45,5 @@ jobs:
         with:
           ctpUrl: '${ CTP_URL }'
           ctpUsername: '${ USERNAME }'
-          ctpPassword: ${{ secrets.password }}
+          ctpPassword: ${{ secrets.PASSWORD }}
           ctpJob: 'P1 Smoke Tests'
