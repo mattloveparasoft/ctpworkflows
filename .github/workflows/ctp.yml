@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CTP CI/CD Pipeline
 
 # Controls when the action will run. 
 on:
@@ -12,6 +12,12 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+# Custom environment variables declared in workflow level
+env:
+  CTP_URL: Available for all jobs in this workflow
+  DTP_URL: Available for all jobs in this workflow
+  username: Available for all jobs in this workflow
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,3 +40,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - uses: parasoft/execute-job-action@v1
+        with:
+          ctpUrl: ${{ CTP_URL }}
+          ctpUsername: ${{ username }}
+          ctpPassword: ${{ secrets.password }}
+          ctpJob: 'P1 Smoke Tests'
