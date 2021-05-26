@@ -17,7 +17,7 @@ on:
 env:
   CTP_URL: Available for all jobs in this workflow
   DTP_URL: Available for all jobs in this workflow
-  username: Available for all jobs in this workflow
+  USERNAME: Available for all jobs in this workflow
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -43,7 +43,7 @@ jobs:
 
       - uses: parasoft/execute-job-action@v1
         with:
-          ctpUrl: ${{ CTP_URL }}
-          ctpUsername: ${{ username }}
+          ctpUrl: '${ CTP_URL }'
+          ctpUsername: '${ USERNAME }'
           ctpPassword: ${{ secrets.password }}
           ctpJob: 'P1 Smoke Tests'
