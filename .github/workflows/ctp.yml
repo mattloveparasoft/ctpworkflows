@@ -41,7 +41,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - uses: parasoft/execute-job-action@1.0.4
+      - uses: parasoft/execute-job-action@1.0.5
         with:
           ctpUrl: ${{ env.CTP_URL }}
           ctpUsername: ${{ env.USERNAME }}
