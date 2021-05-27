@@ -35,12 +35,19 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      # Deploy an environment in CTP
+      - name: Deploy an environment in CTP
+      - uses: parasoft/deploy-environment-action@v1
+        with:
+          ctpUrl: ${{ env.CTP_URL }}
+          ctpUsername: ${{ env.USERNAME }}
+          ctpPassword: ${{ secrets.PASSWORD }}
+          system: 'ParaBank'
+          environment: 'Retail Services (Silo 1)'
+          instance: 'Positive'
 
+      # Execute a job in CTP
+      - name: Execute a job in CTP
       - uses: parasoft/execute-job-action@v1
         with:
           ctpUrl: ${{ env.CTP_URL }}
