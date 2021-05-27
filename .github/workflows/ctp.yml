@@ -43,7 +43,7 @@ jobs:
 
       - uses: parasoft/execute-job-action@1.0.4
         with:
-          ctpUrl: ${{ CTP_URL }}
-          ctpUsername: ${{ USERNAME }}
+          ctpUrl: ${{ env.CTP_URL }}
+          ctpUsername: ${{ env.USERNAME }}
           ctpPassword: ${{ secrets.PASSWORD }}
           ctpJob: 'P1 Smoke Tests'
