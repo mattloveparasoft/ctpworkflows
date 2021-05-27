@@ -37,7 +37,7 @@ jobs:
 
       # Deploy an environment in CTP
       - name: Deploy an environment in CTP
-      - uses: parasoft/deploy-environment-action@v1
+        uses: parasoft/deploy-environment-action@v1
         with:
           ctpUrl: ${{ env.CTP_URL }}
           ctpUsername: ${{ env.USERNAME }}
@@ -48,7 +48,7 @@ jobs:
 
       # Execute a job in CTP
       - name: Execute a job in CTP
-      - uses: parasoft/execute-job-action@v1
+        uses: parasoft/execute-job-action@v1
         with:
           ctpUrl: ${{ env.CTP_URL }}
           ctpUsername: ${{ env.USERNAME }}
