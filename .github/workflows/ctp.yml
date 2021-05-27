@@ -47,3 +47,11 @@ jobs:
           ctpUsername: ${{ env.USERNAME }}
           ctpPassword: ${{ secrets.PASSWORD }}
           ctpJob: 'P1 Smoke Tests'
+          publishReport: true
+          dtpUrl: ${{ env.DTP_URL }}
+          dtpUsername: ${{ env.USERNAME }}
+          dtpPassword: ${{ secrets.password }}
+          dtpProject: 'Parabank_Master'
+          buildId: ${{ github.run_number }}
+          sessionTag: ${{ github.workflow }}
+          appendEnvironment: false
